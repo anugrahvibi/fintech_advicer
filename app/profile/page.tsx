@@ -1,7 +1,12 @@
-import Profile from "../section/Profile";
 
-export default function Page() {
-  return <Profile />;
+
+import Profile from "../section/Profile"
+
+export default function ProfilePage() {
+
+  return (
+    <Profile />
+  )
 }
 
 
