@@ -31,7 +31,6 @@ export default function Home() {
       <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 pb-24 pt-12 md:grid-cols-2 md:gap-16">
         <div>
           <h1 className="text-5xl font-black tracking-tight md:text-7xl">
-            {/* <span className="block tagline italic text-white/90">FinTech</span> */}
             <span className="block tagline italic text-white/90">Your Financial Advisor:</span>
           </h1>
           <p className="mt-8 max-w-xl text-zinc-300">
@@ -40,7 +39,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#get-started"
-              className="rounded-md bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
+              className="rounded-md bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-gray-200"
             >
               Get Started
             </a>
