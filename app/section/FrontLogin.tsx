@@ -1,5 +1,6 @@
 'use client'
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function FrontLogin() {
   return (
@@ -13,7 +14,7 @@ export default function FrontLogin() {
 
           <SignedOut>
             <a
-              href="#signin"
+              href="/profile"
               className="rounded-md bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
             >
               <SignInButton />
