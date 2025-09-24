@@ -1,4 +1,11 @@
+'use client'
+
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+import { SignInButton, useUser } from "@clerk/nextjs";
+
+
 export default function Home() {
+  const {user,} = useUser()
   return (
     <main className="min-h-screen bg-black text-white">
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -7,20 +14,25 @@ export default function Home() {
           <span className="text-lg font-semibold">Fintech</span>
         </div>
         <div>
-          <a
-            href="#signin"
-            className="rounded-md bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
-          >
+           {/* <a
+              href="#signin"
+              className="rounded-md bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
+            >
             Sign In
-          </a>
+           </a> */}
+          <SignedOut>
+            <SignInButton  />
+          </SignedOut> 
+          <SignedIn>
+            <UserButton/>
+          </SignedIn>   
         </div>
       </header>
       <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 pb-24 pt-12 md:grid-cols-2 md:gap-16">
         <div>
           <h1 className="text-5xl font-black tracking-tight md:text-7xl">
-            <span className="block font-serif italic text-white/90">Financial</span>
-            <span className="block font-serif italic text-white/90">Advisor App:</span>
-            <span className="block font-serif italic text-white">Transforming</span>
+            <span className="block font-serif italic text-white/90">Fintech</span>
+            <span className="block font-serif italic text-white/90">Your Financial Advisor:</span>
           </h1>
           <p className="mt-8 max-w-xl text-zinc-300">
             Streamline your financial journey with our intuitive app. Dive into clear charts
@@ -32,12 +44,6 @@ export default function Home() {
               className="rounded-md bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
             >
               Get Started
-            </a>
-            <a
-              href="#learn-more"
-              className="rounded-md border border-white/20 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-white/40"
-            >
-              Learn More
             </a>
           </div>
         </div>
