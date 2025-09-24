@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Finesse – Financial Advisor App",
+  title: "Fintech – Financial Advisor App",
   description: "Streamline your financial journey with clear charts and insights.",
 };
 

@@ -1,28 +1,20 @@
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <div className="flex items-center gap-2">
           <span className="inline-block h-5 w-5 rounded-sm bg-white" />
-          <span className="text-lg font-semibold">Finesse</span>
+          <span className="text-lg font-semibold">Fintech</span>
         </div>
-        <nav className="hidden gap-8 text-sm text-zinc-300 md:flex">
-          <a className="hover:text-white" href="#home">Home</a>
-          <a className="hover:text-white" href="#about">About</a>
-          <a className="hover:text-white" href="#features">Features</a>
-          <a className="hover:text-white" href="#contact">Contact</a>
-        </nav>
         <div>
           <a
-            href="#download"
+            href="#signin"
             className="rounded-md bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
           >
-            Download
+            Sign In
           </a>
         </div>
       </header>
-
       <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 pb-24 pt-12 md:grid-cols-2 md:gap-16">
         <div>
           <h1 className="text-5xl font-black tracking-tight md:text-7xl">
