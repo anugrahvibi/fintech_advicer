@@ -31,12 +31,11 @@ export default function Home() {
       <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 pb-24 pt-12 md:grid-cols-2 md:gap-16">
         <div>
           <h1 className="text-5xl font-black tracking-tight md:text-7xl">
-            <span className="block font-serif italic text-white/90">FinTech</span>
-            <span className="block font-serif italic text-white/90">Your Financial Advisor:</span>
+            {/* <span className="block tagline italic text-white/90">FinTech</span> */}
+            <span className="block tagline italic text-white/90">Your Financial Advisor:</span>
           </h1>
           <p className="mt-8 max-w-xl text-zinc-300">
-            Streamline your financial journey with our intuitive app. Dive into clear charts
-            and insights.
+            Take Control of your Money. Today and Tommorow.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
