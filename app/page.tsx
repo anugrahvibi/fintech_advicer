@@ -14,14 +14,14 @@ export default function Home() {
           <span className="text-lg font-semibold">FinTech</span>
         </div>
         <div>
-           {/* <a
+
+          <SignedOut>
+            <a
               href="#signin"
               className="rounded-md bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-200"
             >
-            Sign In
-           </a> */}
-          <SignedOut>
-            <SignInButton  />
+              <SignInButton />
+            </a>
           </SignedOut> 
           <SignedIn>
             <UserButton/>
