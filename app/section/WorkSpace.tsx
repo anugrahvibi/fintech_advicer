@@ -6,7 +6,7 @@ export default function WorkSpace() {
   return (
     <div className="WorkSpace">
         <Header/>
-        <Dashboard/>
+        {/* <Dashboard/> */}
         <Expenditure/>
     </div>
   );

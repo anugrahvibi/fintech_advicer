@@ -70,16 +70,6 @@ export function TransactionForm({
 
   return (
     <form className="tx-shell" onSubmit={handleSubmit} noValidate>
-      <div className="tx-topbar">
-        <div className="tx-account-pill">
-          <span className="icon">🏦</span>
-          <div className="meta">
-            <div className="title">Bank</div>
-            <div className="sub">Account</div>
-          </div>
-        </div>
-        <button className="caret" type="button">▾</button>
-      </div>
 
       <div className="tx-mode">
         <button type="button" className={type === "income" ? "pill active" : "pill"} onClick={() => setType("income")}>Income</button>
@@ -107,7 +97,6 @@ export function TransactionForm({
             value={amount}
             onChange={(e) => setAmount(e.target.value.replace(/[^0-9.]/g, ""))}
           />
-          <button type="button" className="calc-btn">🧮</button>
         </div>
       </div>
 
@@ -121,7 +110,6 @@ export function TransactionForm({
           <span>Category: <strong>{category}</strong></span>
           <div className="category-actions">
             <button type="button" aria-label="add">＋</button>
-            <button type="button" aria-label="arrange">≡</button>
           </div>
         </div>
         <div className="tx-chips">
@@ -145,14 +133,6 @@ export function TransactionForm({
       </label>
 
       <div className="tx-sticky">
-        <div className="batch">
-          <span>☆</span>
-          <span>Batch Add</span>
-          <label className="switch">
-            <input type="checkbox" />
-            <span className="slider" />
-          </label>
-        </div>
         <button type="submit" className="primary large">✓ Save</button>
       </div>
     </form>
