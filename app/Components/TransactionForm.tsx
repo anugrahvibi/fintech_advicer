@@ -109,7 +109,7 @@ export function TransactionForm({
         <div className="category-head">
           <span>Category: <strong>{category}</strong></span>
           <div className="category-actions">
-            <button type="button" aria-label="add">＋</button>
+            <button className="cursor-pointer rounded hover:bg-gray-500"  type="button" aria-label="add">＋</button>
           </div>
         </div>
         <div className="tx-chips">
