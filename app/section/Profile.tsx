@@ -58,11 +58,6 @@ export default function Profile() {
                 </div>
               </dl>
             </div>
-
-            <div className="bg-[rgba(20,20,20,.8)] border border-white/10 rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-3">Security</h3>
-              <p className="text-sm text-slate-400">Manage your session and authentication from the avatar menu in the top right.</p>
-            </div>
           </div>
         </section>
       </SignedIn>

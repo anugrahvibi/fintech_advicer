@@ -3,8 +3,11 @@
 import { useState } from "react";
 import { Transaction, TransactionForm, TransactionsList } from "../Components/TransactionForm";
 
+
 export default function Expenditure() {
   const [items, setItems] = useState<Transaction[]>([]);
+  console.log(items)
+
 
   return (
     <main className="container">

@@ -1,6 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import React,{ useEffect, useMemo, useState } from "react";
+
+//firebase imports
+import {db} from '../firebaseConfig'
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { title } from "process";
+
+
+
 
 type TransactionType = "income" | "expense";
 
@@ -48,25 +56,38 @@ export function TransactionForm({
   const [category, setCategory] = useState<Category>("Others");
   const [note, setNote] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const parsed = Number(amount);
-    if (!Number.isFinite(parsed) || parsed <= 0) return;
-    const tx: Transaction = {
-      id: `${Date.now()}`,
-      type,
-      date,
-      time,
-      amount: parsed,
-      title: title.trim() || (type === "income" ? "Income" : "Expense"),
-      category,
-      note: note.trim() || undefined,
-    };
-    onAdd(tx);
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
+  const parsed = Number(amount);
+  if (!Number.isFinite(parsed) || parsed <= 0) return;
+
+  const tx: Transaction = {
+    id: `${Date.now()}`,
+    type,
+    date,
+    time,
+    amount: parsed,
+    title: title.trim() || (type === "income" ? "Income" : "Expense"),
+    category,
+    note: note.trim() || undefined,
+  };
+
+  try {
+    await addDoc(collection(db, "transactions"), {
+      ...tx,
+      createdAt: serverTimestamp(),
+    });
+
+    console.log("✅ Transaction saved to Firestore:", tx);
+    onAdd(tx); // Optional: update UI state
     setAmount("");
     setTitle("");
     setNote("");
+  } catch (error) {
+    console.error("❌ Error saving transaction:", error);
   }
+}
+
 
   return (
     <form className="tx-shell" onSubmit={handleSubmit} noValidate>
@@ -140,6 +161,27 @@ export function TransactionForm({
 }
 
 export function TransactionsList({ items }: { items: Transaction[] }) {
+
+const handleSave = async () => {
+  try {
+    await addDoc(collection(db, "myCollection"), {
+      ...items,          // your form fields
+      createdAt: new Date() // optional: timestamp
+    });
+    console.log("hello",items);
+    
+    console.log("✅ Data saved to Firestore!");
+  } catch (error) {
+    console.error("❌ Error saving document:", error);
+  }
+};
+
+useEffect(() => {
+  handleSave
+}, [items])
+
+
+
   if (items.length === 0) {
     return <div className="tx-empty">No transactions yet.</div>;
   }
